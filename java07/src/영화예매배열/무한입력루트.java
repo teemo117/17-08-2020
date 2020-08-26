@@ -32,6 +32,7 @@ public class 무한입력루트 {
 				System.out.println("예약되었습니다");
 				count++;
 			} else {
+				System.out.println("이미 예약되었습니다");
 				System.out.println("다른자리를 선택해주세요");
 			}
 		}
