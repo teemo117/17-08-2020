@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function idCheck() { //아이디가 빈칸인지 확인
+		id2 = document.getElementById('id2').value
+		if (id2 == 0) {
+			alert('아이디를 입력하세요')
+		} else {
+			alert("ID길이확인 버튼을 누르세요")
+		}
+	}
+	function idLenCheck() {//아이디 길이확인
+		id2 = document.getElementById('id2').value
+		if (id2.length < 5) {//5글자보다 작다면
+			alert('너무 짧습니다.')
+		} else {
+			alert("ID중복확인 버튼을 누르세요")
+		}
+	}
+	function idCheck2() {//id중복확인
+		id = document.getElementById('id2').value
+		location.href = 'equals.jsp?id2=' + id
+	}
+	function idLogin() {//id로그인확인
+		id = document.getElementById('id2').value
+		pw = document.getElementById('pw2').value
+		pw2 = document.getElementById('pw3').value
+		if (pw == pw2) {
+			location.href = 'login.jsp?id2=' + id + '&pw2=' + pw
+		}
+		else{
+			document.getElementById('result3').innerHTML = '<font color=red>패스워드가다름'
+		}
+
+	}
+</script>
+</head>
+<body>
+	<h3>로그인 처리</h3>
+	<hr color="red">
+	아이디 :
+	<input type="text" id='id2' name="id2">
+	<!--id는 함수로 넘기는,name은 jsp로넘기는 -->
+	<br> 비밀번호 :
+	<input type="text" id='pw2' name="pw2">
+	<br> 비밀번호확인 :
+	<input type="text" id='pw3' name="pw3">
+	<br>
+	<h3 id=result3></h3>
+	<button onclick="idCheck()">ID입력확인</button>
+	<button onclick="idLenCheck()">ID길이확인</button>
+	<br>
+	<button onclick="idCheck2()">ID중복확인</button>
+	<!--equals.jsp 에서 확인-->
+	<button onclick="idLogin()">로그인 처리</button>
+	<!--login.jsp 에서 확인-->
+
+</body>
+</html>

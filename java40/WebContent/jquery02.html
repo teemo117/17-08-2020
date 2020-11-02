@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#check').click(function() {
+			pw1 = $('#pw1').val()
+			pw2 = $('#pw2').val()
+			if (pw1 == pw2) {
+				$('#result').html('<font color=blue> 일치 </font>')
+			} else {
+				$('#result').html('<font color=red> 불일치 </font>')
+
+			}
+		})
+	})
+</script>
+
+</head>
+<body>
+	패스워드 입력 :
+	<input type="text" id=pw1>
+	<br> 패스워드 입력 확인 :
+	<input type="text" id=pw2>
+	<br>
+	<button id=check>확인</button>
+	<div id=result></div>
+</body>
+</html>
