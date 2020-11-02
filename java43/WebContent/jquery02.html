@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/*콜백함수*/
+		$('button').click(function() {/*태그 클래스 id*/
+			$(this).text('나로바뀌어!')
+			bText = $(this).text()
+			console.log(bText)
+		})
+		$('#in2').click(function() {
+			inputValue = $('#in1').val()
+			console.log('input태그의 value 속성값 ' + inputValue)
+			$('#in1').val('내가여기 들어가요')
+		})
+	})
+</script>
+</head>
+<body>
+	<link rel="shortcut icon" href="#">
+	<button>기능 처리가 함수 중심으로 처리됨</button>
+	<input id="in1" type ="text" name="food" value="나는 input의 값">
+	<input id="in2" type="button" value="입력한 값 가져오기" >
+	<!--windows 객체 location객체  -->
+
+</body>
+</html>

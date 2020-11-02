@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#p_button').click(function() {
+		$.ajax({
+			url: "pay.jsp",
+			data:{
+				p1: $('#p1').val(),
+				p2: $('#p2').val()
+			},
+			success: function(result) {
+				$('#d1').text(result)
+			}
+		})
+	})
+})
+
+
+
+</script>
+</head>
+<body>
+결제금액: <input type="text" id="p1"><br>
+<p style="color: blue">*휴대폰 10%할인, 신용카드 20%할인, 현금 30%할인</p>
+결제수단: <input type="text" id="p2" placeholder="1)휴대폰 2)신용카드 3)현금">  <button id="p_button">결제하기</button><br>
+
+<div id="d1" style="font-size: 30px; color:green; font-weight: bold;"></div>
+</body>
+</html>

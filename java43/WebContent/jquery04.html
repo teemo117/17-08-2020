@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({/*비동기통신*/
+				url : "call2.jsp",
+				data : {
+					score : $('#score').val()
+					//데이터를 기다렸다가 실행된다.
+					//값으로 인식하기 위해서 ""로 감싸준다
+					//만약 "" 없이 '홍길동'을 넣으면 변수로 인식된다.
+				},
+				success : function(result) {
+					console.log("받은 점수 : " + result)
+					if(result == "최우수" || result =="우수"){
+						alert("받은점수: "+ $('#score').val() +", " + result +" - 통과")
+					}else{
+						alert("받은점수: "+ $('#score').val() +", " + result +" - 재시험")
+					}
+				}
+			})
+
+		})
+	})
+</script>
+</head>
+<body>
+	점수<input type="text" id="score">
+	<button id="b1">점수판별해보자</button>
+
+	<!--windows 객체 location객체  -->
+
+</body>
+</html>
